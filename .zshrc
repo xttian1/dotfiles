@@ -85,7 +85,7 @@ plugins=(
 
 source $ZSH/oh-my-zsh.sh
 
-# User configuration
+# User configurationgit clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
 
 # export MANPATH="/usr/local/man:$MANPATH"
 
@@ -131,22 +131,28 @@ export COREPACK_ENABLE_AUTO_PIN=0
 # install: brew install trash
 # repo: https://github.com/ali-rantakari/trash
 # I think I should have received enough lessons. :(
+
 alias rm="trash"
+alias proxy_clash='export http_proxy=http://127.0.0.1:7897 && export https_proxy=http://127.0.0.1:7897 && export all_proxy=socks5://127.0.0.1:7897'
+alias unproxy='unset http_proxy https_proxy all_proxy'
+alias proxyinfo='env | grep -i proxy'
+alias l.='ls -a'
+
 
 # -------------------------------- #
 # Directories
 #
 # I put
-# `~/projects/i` for my projects
-# `~/projects/r` for reproductions
+# `~/workspace/personal` for my projects
+# `~/workspace/work` for projects for work
 # -------------------------------- #
 
-function i() {
-  cd ~/projects/i/$1
+function my() {
+  cd ~/workspace/personal/$1
 }
 
-function repros() {
-  cd ~/projects/r/$1
+function work() {
+  cd ~/workspace/work/$1
 }
 
 function dir() {
