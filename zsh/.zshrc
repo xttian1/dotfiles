@@ -133,7 +133,7 @@ export COREPACK_ENABLE_AUTO_PIN=0
 # I think I should have received enough lessons. :(
 
 alias rm="trash"
-alias proxy_clash='export http_proxy=http://127.0.0.1:7897 && export https_proxy=http://127.0.0.1:7897 && export all_proxy=socks5://127.0.0.1:7897'
+alias proxy_clash='export http_proxy=http://127.0.0.1:7890 && export https_proxy=http://127.0.0.1:7890 && export all_proxy=socks5://127.0.0.1:7890'
 alias unproxy='unset http_proxy https_proxy all_proxy'
 alias proxyinfo='env | grep -i proxy'
 alias l.='ls -a'
