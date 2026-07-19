@@ -173,10 +173,19 @@ function cdf() {
   cd "$(pfd)"
 }
 
-
 function gitall() {
-  git add .
-  git commit -m "$1"
-  git push
-}
+    if [ -z "$*" ]; then
+        echo "❌ 错误：请提供提交信息。"
+        echo "用法: gitall [提交信息...]"
+        return 1
+    fi
 
+    local msg="$*"
+    echo "➜  Adding all changes..."
+    git add . || return 1
+    echo "➜  Committing with message: $msg"
+    git commit -m "$msg" || return 1
+    echo "➜  Pushing to remote..."
+    git push || return 1
+    echo "✅ 全部完成！"
+}
