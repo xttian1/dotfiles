@@ -137,6 +137,8 @@ alias proxy_clash='export http_proxy=http://127.0.0.1:7890 && export https_proxy
 alias unproxy='unset http_proxy https_proxy all_proxy'
 alias proxyinfo='env | grep -i proxy'
 alias l.='ls -a'
+alias cdtmp='cd `mktemp -d /tmp/xita-XXXXXX`'
+alias qr='qrcode-terminal'
 
 
 # -------------------------------- #
@@ -158,3 +160,23 @@ function work() {
 function dir() {
   mkdir -p $1 && cd $1
 }
+
+function pfd() {
+  osascript 2> /dev/null <<EOF
+  tell application "Finder"
+    return POSIX path of (target of window 1 as alias)
+  end tell
+EOF
+}
+
+function cdf() {
+  cd "$(pfd)"
+}
+
+
+function gitall() {
+  git add .
+  git commit -m "$1"
+  git push
+}
+
