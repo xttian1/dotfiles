@@ -142,6 +142,7 @@ alias ll.='ls -la'
 alias cdtmp='cd `mktemp -d /tmp/xita-XXXXXX`'
 alias qr='qrcode-terminal'
 alias sshTN='ssh -p 2892 tianxt@10.13.34.111'
+alias sshLP='ssh -p 5241 tianxintao@10.13.34.120'
 
 # -------------------------------- #
 # Directories
