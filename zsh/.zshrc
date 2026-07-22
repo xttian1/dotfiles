@@ -180,10 +180,10 @@ function cdf() {
   cd "$(pfd)"
 }
 
-function gitall() {
+function gitcwd() {
     if [ -z "$*" ]; then
         echo "❌ 错误：请提供提交信息。"
-        echo "用法: gitall [提交信息...]"
+        echo "用法: gitcwd [提交信息...]"
         return 1
     fi
 
@@ -200,11 +200,14 @@ function gitall() {
 function stowall() {
   if [ -z "$*" ]; then
     echo "❌ 错误：请提供提交信息。"
-    echo "用法: gitall [提交信息...]"
+    echo "用法: stowall [提交信息...]"
     return 1
   fi
   
   local msg="$*"
-  cd ~/workspace/personal/dotfiles/
-  stow -t ~ -R $msg
+  cd ~/workspace/personal/dotfiles/ || return 1
+  git add .
+  git commit -m "$msg"
+  stow -t ~ -R .
+  echo "✅ Git 提交与Stow 部署已完成！"
 }
