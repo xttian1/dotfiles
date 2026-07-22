@@ -192,9 +192,6 @@ function gitcwd() {
     git add . || return 1
     echo "➜  Committing with message: $msg"
     git commit -m "$msg" || return 1
-    echo "➜  Pushing to remote..."
-    git push || return 1
-    echo "✅ 全部完成！"
 }
 
 function stowall() {
