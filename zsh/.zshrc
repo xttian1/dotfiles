@@ -155,6 +155,10 @@ function my() {
   cd ~/workspace/personal/$1
 }
 
+function repos() {
+  cd ~/workspace/repos/$1
+}
+
 function work() {
   cd ~/workspace/work/$1
 }
