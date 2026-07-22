@@ -206,5 +206,5 @@ function stowall() {
   
   local msg="$*"
   cd ~/workspace/personal/dotfiles/
-  stow -t ~ $msg
+  stow -t ~ -R $msg
 }
