@@ -196,3 +196,15 @@ function gitall() {
     git push || return 1
     echo "✅ 全部完成！"
 }
+
+function stowall() {
+  if [ -z "$*" ]; then
+    echo "❌ 错误：请提供提交信息。"
+    echo "用法: gitall [提交信息...]"
+    return 1
+  fi
+  
+  local msg="$*"
+  cd ~/workspace/personal/dotfiles/
+  stow -t ~ $msg
+}
