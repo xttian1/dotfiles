@@ -217,7 +217,9 @@ function stowall() {
   cd ~/workspace/personal/dotfiles/ || return 1
   git add .
   git commit -m "$msg"
-  stow -t ~ -R .
+  stow -t ~ -R zsh
+  stow -t ~ -R vim
+  stow -t ~ -R git
   echo "✅ Git 提交与Stow 部署已完成！"
 }
 
