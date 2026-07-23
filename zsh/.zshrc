@@ -172,6 +172,10 @@ function work() {
   cd ~/workspace/work/$1
 }
 
+function sb() {
+  cd ~/workspace/sandbox/$1
+}
+
 function dir() {
   mkdir -p $1 && cd $1
 }
@@ -219,3 +223,14 @@ function stowall() {
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+
+# >>> juliaup initialize >>>
+
+# !! Contents within this block are managed by juliaup !!
+
+path=('/Users/xita/.juliaup/bin' $path)
+export PATH
+# Tab completion for juliaup and julia channel selection
+[ -f "/Users/xita/.julia/juliaup/completions/zsh.zsh" ] && source "/Users/xita/.julia/juliaup/completions/zsh.zsh"
+
+# <<< juliaup initialize <<<
